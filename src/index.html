@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Workflower</title>
+    <link href="vendor/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/workflower.css" rel="stylesheet">    
+  </head>
+  <body>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    	<div class="navbar-header pull-left">
+          <div class="navbar-brand">
+            <div class="workflower-play glyphicon glyphicon-play"></div>
+          </div>
+        </div>
+        <div class="navbar-header pull-right">
+        
+          <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu pull-right" role="menu">
+                  <li><a href="#" id="dev-tools" role="menuitem">Developer Tools</a></li>
+              </ul>
+          </div>
+
+      	</div>      
+    </div>    
+    
+
+    <div class="container">
+
+      <div class="greeting" id="greeting">
+        <h1>Ohai!</h1>
+        <p class="lead">Let's get this party started!<br>Open a playlist from the File menu.</p>
+      </div>
+
+      <div class="content" id="content" style="display:none;">
+      </div>      
+      <input style="display:none;" id="fileDialog" type="file" />
+    </div><!-- /.container -->
+    
+    <script type="text/javascript" src="vendor/jquery-1.11.0.min.js"></script>  
+    <script src="vendor/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/ui-menus.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/ui.js" charset="UTF-8"></script>	    
+
+  </body>
+</html>

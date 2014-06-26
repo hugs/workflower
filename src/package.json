@@ -1,0 +1,17 @@
+{
+  "name": "Workflower",
+  "main": "index.html",
+  "window": {
+    "title": "Workflower",      
+    "icon": "workflower.png",    
+    "width": 400,
+    "height": 600,
+    "show": true,
+    "toolbar": false
+  },
+  "js-flags": "--harmony",
+  "chromium-args" : "--remote-debugging-port=22222",
+  "dependencies": {
+    "slowjam": "0.x.x"
+  }  
+}

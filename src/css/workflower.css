@@ -1,0 +1,66 @@
+body {
+  padding-top: 50px;
+  user-select: none;
+}
+
+.greeting {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.content {
+
+}
+
+.navbar {min-height:55px !important}
+
+.navbar .nav,
+.navbar .nav > li
+{
+  float:none;
+  display:inline-block;
+  vertical-align: top;
+}
+
+.navbar-inverse {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  text-align:center;
+  background: lightgray;
+}
+
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
+}
+
+.workflower-play {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .4;
+}
+
+.workflower-play:hover,
+.workflower-play:focus {
+  color: black;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.btn {
+  background-color: lightgray;
+  border: none;
+}
+
+.dropdown-toggle {
+  margin-top: 15px;
+  margin-right: 5px;
+  color: #000;  
+  opacity: .7;
+}
