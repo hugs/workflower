@@ -1,1 +1,1 @@
-### Workflower - Modern acceptance test automation
+### Workflower - Modern workflow automation
