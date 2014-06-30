@@ -8,5 +8,6 @@ cp -R ./node-webkit.app ../Workflower.app
 cd ../..
 cp src/Info.plist bin/Workflower.app/Contents/Info.plist
 cp src/img/workflower.icns bin/Workflower.app/Contents/Resources/nw.icns
+cp -R src bin/Workflower.app/Contents/Resources/app.nw
 
 ./bin/Workflower.app/Contents/MacOS/node-webkit 
