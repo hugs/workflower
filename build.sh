@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-cd src
-rm app.nw
-zip -r app.nw *
-cd ..
-
 rm -rf ./bin/Workflower.app/
 
 # For Node v11 
@@ -14,4 +9,4 @@ cd ../..
 cp src/Info.plist bin/Workflower.app/Contents/Info.plist
 cp src/img/workflower.icns bin/Workflower.app/Contents/Resources/nw.icns
 
-./bin/Workflower.app/Contents/MacOS/node-webkit ./src/app.nw
+./bin/Workflower.app/Contents/MacOS/node-webkit 
