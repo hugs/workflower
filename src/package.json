@@ -1,17 +1,30 @@
 {
   "name": "Workflower",
+  "version": "0.0.2",
+  "description": "Modern workflow automation",
+  "author": "Jason Huggins <jrhuggins@gmail.com>",
+  "homepage": "https://github.com/hugs/workflower",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugs/workflower.git"
+  },
   "main": "index.html",
   "window": {
-    "title": "Workflower",      
-    "icon": "workflower.png",    
+    "title": "Workflower",
+    "icon": "workflower.png",
     "width": 400,
     "height": 600,
     "show": true,
     "toolbar": false
   },
   "js-flags": "--harmony",
-  "chromium-args" : "--remote-debugging-port=22222",
+  "chromium-args": "--remote-debugging-port=22222",
   "dependencies": {
-    "slowjam": "0.x.x"
-  }  
+    "better-assert": "*",
+    "coffee-script": "*",
+    "mocha": "1.20.x",
+    "node-uuid": "^1.4.1",
+    "slowjam": "0.x.x",
+    "stack-trace": "*"
+  }
 }
