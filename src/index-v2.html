@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+    <title>Workflower</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="vendor/bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/prism/prism.css" rel="stylesheet">
+    <link href="css/workflower.css" rel="stylesheet">    
+  </head>
+  <body>
+  
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    	<div class="navbar-header pull-left">
+          <div class="navbar-brand">
+            <div class="workflower-play glyphicon glyphicon-play"></div>
+          </div>
+        </div>
+        <div class="navbar-header pull-right">
+        
+          <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <span class="glyphicon glyphicon-cog"></span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu pull-right" role="menu">
+                  <li><a href="#" id="dev-tools" role="menuitem">Developer Tools</a></li>
+              </ul>
+          </div>
+
+      	</div>      
+    </div>    
+  
+  
+    <div class="container">
+      
+      <div class="greeting" id="greeting">
+        <h1>Ohai!</h1>
+        <p class="lead">Let's get this party started!<br>Open a playlist from the File menu.</p>
+      </div>      
+      
+      <nav id="target_nav" class="col-xs-12 col-sm-4 col-md-4">
+          <ul class="nav list-group" data-spy="affix" data-offset-top="0">
+              <li class="nav list-group-item"><a href="#top"><b>Playlist #1</b></a></li>          
+              <li class="nav list-group-item"><a href="#one">Workflow #1</a></li>
+              <li class="nav list-group-item"><a href="#two">Workflow #2</a></li>
+              <li class="nav list-group-item"><a href="#three">Workflow #3</a></li>
+              <li class="nav list-group-item"><a href="#four">Workflow #4</a></li>
+          </ul>
+      </nav>
+      <section id="content" class="col-xs-12 col-sm-8 col-md-8 " data-spy="scroll" data-target="#target_nav" data-offset="20">
+          <section><hr id="top"></section><br>
+          <section><h4 id="one">Workflow #1</h4><pre>workflow("Workflow #1", function(){
+  assert(1)
+})</pre></section>
+          <section><h4 id="two">Workflow #2</h4><pre>workflow("Workflow #2", function(){
+  assert(1)
+})</pre></section>
+          <section><h4 id="three">Workflow #3</h4><pre>workflow("Workflow #3", function(){
+  assert(1)
+})</pre></section>
+          <section><h4 id="four">Workflow #4</h4><pre>workflow("Workflow #4", function(){
+  assert(1)
+})</pre></section>
+     </section>
+     <input style="display:none;" id="fileDialog" type="file" accept=".js,.coffee,.md"/>     
+   </div><!-- /.container -->
+   
+<script type="text/javascript" src="vendor/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="vendor/prism/prism.js" charset="utf-8"></script>
+<script type="text/javascript" src="vendor/bootstrap-3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="vendor/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="vendor/jquery.localScroll.js"></script>
+<script type="text/javascript" src="js/ui-menus.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/ui.js" charset="UTF-8"></script>     
+<script type="text/javascript">
+	jQuery(function( $ ){
+		/**
+		 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+		 * @see http://flesler.demos.com/jquery/scrollTo/
+		 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+		 */
+		
+		// The default axis is 'y', but in this demo, I want to scroll both
+		// You can modify any default like this
+		$.localScroll.defaults.axis = 'xy';
+		
+		/**
+		 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+		 * also affect the >> and << links. I want every link in the page to scroll.
+		 */
+		$('#target_nav').localScroll({
+			target: '#content', // could be a selector or a jQuery object too.
+			queue:false,
+			duration:600,
+			hash:true,
+			onBefore:function( e, anchor, $target ){
+				// The 'this' is the settings object, can be modified
+			},
+			onAfter:function( anchor, settings ){
+				// The 'this' contains the scrolled element (#content)
+			}
+		});
+	});
+</script>
+</body></html>
