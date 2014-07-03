@@ -1,0 +1,7 @@
+JS library dependencies:
+jquery.scrollTo: https://github.com/flesler/jquery.scrollTo
+jquery.localScroll: https://github.com/flesler/jquery.localScroll
+
+PageSlider: https://github.com/ccoenraets/PageSlider
+  (For mobile page slides)
+  Demo: http://coenraets.org/samples/pageslider/
