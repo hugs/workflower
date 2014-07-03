@@ -1,6 +1,33 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0px;
+}
+
 body {
   padding-top: 50px;
-  user-select: none;
+  user-select: none; 
+}
+
+hr {
+  border:2px;
+}  
+
+pre {
+  border: 0px;
+  background-color: #fff;
+}
+
+code {
+  border: 0px;
+}
+
+section {
+	height:600px;
+	overflow:scroll;
+	border: 0px solid grey;
+	padding: 10px 0px 0px 0px;
+  margin-right:0px;
 }
 
 .greeting {
@@ -8,10 +35,22 @@ body {
   text-align: center;
 }
 
-.content {
-
+.container {
+  width:100%;
+	padding-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
+nav {
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+  
+.nav {
+ padding:0px; 
+}  
+  
 .navbar {min-height:55px !important}
 
 .navbar .nav,
@@ -35,7 +74,34 @@ body {
   left: 0;
   text-align: center;
   margin: auto;
+}  
+
+
+a {
+  color:black
+}  
+
+.list-group-item.active,
+.list-group-item.active:hover, 
+.list-group-item.active:focus  {
+	background: lightgray;;
 }
+
+.list-group-item.active a,
+.list-group-item.active:hover a, 
+.list-group-item.active:focus a  {
+  color:black
+	}
+
+@media (min-width: 400px) {
+    .affix {
+        position: static;
+    }
+}  
+
+::-webkit-scrollbar { 
+    display: none; 
+}  
 
 .workflower-play {
   font-size: 26px;

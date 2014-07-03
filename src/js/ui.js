@@ -12,7 +12,7 @@ $(function () {
       if (event.metaKey && event.keyCode==79) {
           // Command + O
           console.log ("Command + O");
-          chooseFile("#fileDialog");
+          chooseFile();
       }
       if (event.metaKey && event.keyCode==87) {
           // Command + W
@@ -26,7 +26,6 @@ $(function () {
       e.preventDefault();// prevent the default anchor functionality
   });
 
-	
 });
 
 

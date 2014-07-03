@@ -34,4 +34,5 @@ module.exports = function(filePath) {
       console.log('  - ' + m.suite.tests[i].title)
     }
   }
+  //m.run()
 }

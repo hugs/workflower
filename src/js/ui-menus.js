@@ -1,6 +1,9 @@
-var fs = require('fs');
 var gui = require('nw.gui');
 var win = gui.Window.get();
+
+
+var parse = require('./js/parse');
+var exec = require('child_process').exec;
 
 // Create the file menu
 var file = new gui.Menu();
@@ -23,32 +26,40 @@ win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
 
 openMenuItem.on("click", function () {
     console.log("open file!");
-    chooseFile("#fileDialog");
+    chooseFile();
 });
 
 closeMenuItem.on("click", function () {
     console.log("close file!");
 });
 
-chooseFile = function(name) {
-    var chooser = document.querySelector(name);
-    chooser.addEventListener("change", function(evt) {
-      console.log(this.value);
 
-      fs.readFile(this.value, 'utf8', function (err,data) {
-          if (err) {
-              return console.log(err);
-          }
-          $("#greeting").hide();
-          $("#content").show();
-          $("#content").text(data);
-          $("#content").filePath = this.value;
-          
-      });      
-    }, false);
+chooser = document.querySelector("#fileDialog");
+chooser.addEventListener("change", function(evt) {
+  filePath = this.value;
+  console.log(filePath);  
+  
+  if (filePath.endsWith('playlist.js')) {
+    console.log("Playlist!")            
+    child = exec('bin/node bin/parse ' + filePath,
+      function (error, stdout, stderr) {
+        console.log('stdout:\n' + stdout);
+        //console.log('stderr:\n' + stderr);
+        if (error !== null) {
+          console.log('exec error: ' + error);
+        }
+    });             
+  }
+  
+  //$("#greeting").hide();
+  //$("#content").html('<h3>' + 'Yo' + '</h3>');  
+  //$("#content").show();          
+   
+}, false);
 
+chooseFile = function() {
+    chooser.value = null;
     chooser.click();
 }
-
 
 
