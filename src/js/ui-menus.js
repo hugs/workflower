@@ -50,10 +50,13 @@ chooser.addEventListener("change", function(evt) {
         }
     });             
   }
-  
-  //$("#greeting").hide();
-  //$("#content").html('<h3>' + 'Yo' + '</h3>');  
-  //$("#content").show();          
+
+  $("#greeting").hide();
+  $("#main").fadeIn()
+  $('[data-spy="scroll"]').each(function () {
+    var $spy = $(this).scrollspy('refresh')
+  })
+  $("#content").scrollTo("#top")       
    
 }, false);
 

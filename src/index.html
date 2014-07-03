@@ -36,8 +36,9 @@
       <div class="greeting" id="greeting">
         <h1>Ohai!</h1>
         <p class="lead">Let's get this party started!<br>Open a playlist from the File menu.</p>
-      </div>      
-      
+      </div>
+            
+      <div id="main">
       <nav id="target_nav" class="col-xs-12 col-sm-4 col-md-4">
           <ul class="nav list-group" data-spy="affix" data-offset-top="0">
               <li class="nav list-group-item"><a href="#top"><b>Playlist #1</b></a></li>          
@@ -63,6 +64,7 @@
 })</pre></section>
      </section>
      <input style="display:none;" id="fileDialog" type="file" accept=".js,.coffee,.md"/>
+     </div>
    </div><!-- /.container -->
    
 <script type="text/javascript" src="vendor/jquery-1.11.0.min.js"></script>
@@ -101,6 +103,7 @@
 			}
 		});
 	});
+  $("#main").hide();  
 </script>
 </body>
 </html>
