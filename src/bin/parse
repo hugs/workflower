@@ -1,5 +1,0 @@
-parse = require('../js/parse')
-fileArg = process.argv[2]
-if (fileArg) {
-  parse(fileArg)
-}

@@ -2,8 +2,8 @@ var gui = require('nw.gui');
 var win = gui.Window.get();
 
 
-var parse = require('./js/parse');
-var exec = require('child_process').exec;
+//var parse = require('./js/parse');
+//var exec = require('child_process').exec;
 
 // Create the file menu
 var file = new gui.Menu();
@@ -41,14 +41,14 @@ chooser.addEventListener("change", function(evt) {
   
   if (filePath.endsWith('playlist.js')) {
     console.log("Playlist!")            
-    child = exec('bin/node bin/parse ' + filePath,
-      function (error, stdout, stderr) {
-        console.log('stdout:\n' + stdout);
-        //console.log('stderr:\n' + stderr);
-        if (error !== null) {
-          console.log('exec error: ' + error);
-        }
-    });             
+    //child = exec('bin/node bin/parse ' + filePath,
+    //  function (error, stdout, stderr) {
+    //    console.log('stdout:\n' + stdout);
+    //    //console.log('stderr:\n' + stderr);
+    //    if (error !== null) {
+    //      console.log('exec error: ' + error);
+    //    }
+    //});             
   }
 
   $("#greeting").hide();
