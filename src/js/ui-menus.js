@@ -1,10 +1,6 @@
 var gui = require('nw.gui');
 var win = gui.Window.get();
 
-
-//var parse = require('./js/parse');
-//var exec = require('child_process').exec;
-
 // Create the file menu
 var file = new gui.Menu();
 
@@ -24,6 +20,24 @@ win.menu = new gui.Menu({ type: 'menubar' });
 // Attach file menu
 win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
 
+win.on('close', function() {
+  this.hide(); // Pretend to be closed already
+  console.log("Workflower exiting...");
+  if (process.hasOwnProperty('children')) {
+    // console.log("Workflower child processes:");
+    for (var key in process.children) {
+      if (process.children.hasOwnProperty(key)) {
+        // console.log('child: ' + process.children[key].pid);
+        // console.log('  exitCode: ' + process.children[key].exitCode);
+        // console.log('  killed: ' + process.children[key].killed);
+        process.children[key].kill('SIGINT');
+      }
+    }
+  }
+
+  this.close(true);
+});
+
 openMenuItem.on("click", function () {
     console.log("open file!");
     chooseFile();
@@ -37,27 +51,19 @@ closeMenuItem.on("click", function () {
 chooser = document.querySelector("#fileDialog");
 chooser.addEventListener("change", function(evt) {
   filePath = this.value;
-  console.log(filePath);  
-  
+  console.log(filePath);
+
   if (filePath.endsWith('playlist.js')) {
-    console.log("Playlist!")            
-    //child = exec('bin/node bin/parse ' + filePath,
-    //  function (error, stdout, stderr) {
-    //    console.log('stdout:\n' + stdout);
-    //    //console.log('stderr:\n' + stderr);
-    //    if (error !== null) {
-    //      console.log('exec error: ' + error);
-    //    }
-    //});             
+    console.log("Playlist!");
   }
 
   $("#greeting").hide();
-  $("#main").fadeIn()
+  $("#main").fadeIn();
   $('[data-spy="scroll"]').each(function () {
-    var $spy = $(this).scrollspy('refresh')
+    var $spy = $(this).scrollspy('refresh');
   })
-  $("#content").scrollTo("#top")       
-   
+  $("#content").scrollTo("#top");
+
 }, false);
 
 chooseFile = function() {
