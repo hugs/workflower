@@ -56,19 +56,74 @@ chooser.addEventListener("change", function(evt) {
   if (filePath.endsWith('playlist.js')) {
     console.log("Playlist!");
   }
+  workflower.filePath = filePath;
+  workflower.restart();
 
+}, false);
+
+chooseFile = function() {
+  chooser.value = null;
+  setTimeout(function() {
+    chooser.click();
+  }, 200);
+}
+
+function initScrolling() {
+  jQuery(function( $ ){
+  	/**
+  	 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+  	 * @see http://flesler.demos.com/jquery/scrollTo/
+  	 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+  	 */
+	
+  	// The default axis is 'y', but in this demo, I want to scroll both
+  	// You can modify any default like this
+  	$.localScroll.defaults.axis = 'xy';
+	
+  	/**
+  	 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+  	 * also affect the >> and << links. I want every link in the page to scroll.
+  	 */
+  	$('#target_nav').localScroll({
+  		target: '#content', // could be a selector or a jQuery object too.
+  		queue:false,
+  		duration:0,
+  		hash:true,
+  		onBefore:function( e, anchor, $target ){
+  			// The 'this' is the settings object, can be modified
+  		},
+  		onAfter:function( anchor, settings ){
+  			// The 'this' contains the scrolled element (#content)
+  		}
+  	});
+  });
+}
+
+initScrolling();
+$("#main").hide(); 
+//$("#greeting").hide(); 
+
+Angelo = require('angelo').Angelo;
+workflower = new Angelo();
+
+workflower.on('loaded', function() {
+  var mainContent = template({
+    playlists: this.playlists
+  });
+  $("#main").html(mainContent);
   $("#greeting").hide();
   $("#main").fadeIn();
   $('[data-spy="scroll"]').each(function () {
     var $spy = $(this).scrollspy('refresh');
   })
-  $("#content").scrollTo("#top");
+  initScrolling();
+  $("#content").scrollTo('#'+workflower.playlists[0][0].id);
+})
 
-}, false);
+swig  = require('swig');
+template = swig.compileFile('template/template.html');
 
-chooseFile = function() {
-    chooser.value = null;
-    chooser.click();
-}
+
+
 
 

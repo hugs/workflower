@@ -1,0 +1,36 @@
+        <nav id="target_nav" class="col-xs-12 col-sm-4 col-md-4">
+            {% for playlist in playlists %}          
+            <ul class="nav list-group" data-spy="affix" data-offset-top="0">
+
+                <li class="nav list-group-item"><a href="#{{ playlist|first.id }}"><b>{{ playlist|first.title }}</b></a></li>
+                {% for workflow in playlist|last -%}
+                <li class="nav list-group-item"><a href="#{{ workflow.id }}">{{ workflow.title }}</a></li>
+                {% endfor %}
+
+            </ul>
+            <ul class="nav list-group" data-spy="affix" data-offset-top="0">
+            {% endfor -%}            
+        </nav>
+
+
+        <section id="content" class="col-xs-12 col-sm-8 col-md-8 " data-spy="scroll" data-target="#target_nav" data-offset="20">
+          <section>
+        <hr id="all">
+      </section>
+        {% for playlist in playlists %}          
+          <section>
+            <hr id="{{ playlist|first.id }}">
+          </section>
+          <br>
+
+          {% for workflow in playlist|last -%}
+          <section>
+            <h4 id="{{ workflow.id }}">{{ workflow.title }}</h4>
+            <pre>workflow("Workflow #1", function(){
+  assert(1)
+})</pre>
+          </section>
+
+          {% endfor %}
+       {% endfor -%}  
+      </section>
