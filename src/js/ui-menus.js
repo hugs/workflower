@@ -115,6 +115,7 @@ workflower.on('loaded', function() {
   $("#main").html(mainContent);
   $("#greeting").hide();
   $("#main").fadeIn();
+  Prism.highlightAll();
   $('[data-spy="scroll"]').each(function () {
     var $spy = $(this).scrollspy('refresh');
   })
