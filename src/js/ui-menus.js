@@ -76,11 +76,11 @@ function initScrolling() {
   	 * @see http://flesler.demos.com/jquery/scrollTo/
   	 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
   	 */
-	
+
   	// The default axis is 'y', but in this demo, I want to scroll both
   	// You can modify any default like this
   	$.localScroll.defaults.axis = 'xy';
-	
+
   	/**
   	 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
   	 * also affect the >> and << links. I want every link in the page to scroll.
@@ -101,7 +101,7 @@ function initScrolling() {
 }
 
 initScrolling();
-$("#main").hide(); 
+$("#main").hide();
 
 Angelo = require('angelo').Angelo;
 var nodeBinaryPath = path.join(process.cwd(), 'bin', 'node');
