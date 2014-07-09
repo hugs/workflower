@@ -23,10 +23,10 @@ code {
 }
 
 section {
-	height:600px;
-	overflow:scroll;
-	border: 0px solid grey;
-	padding: 10px 0px 200px 0px;
+  height:600px;
+  overflow:scroll;
+  border: 0px solid grey;
+  padding: 10px 0px 200px 0px;
   margin-right:0px;
 }
 
@@ -37,14 +37,14 @@ section {
 
 .container {
   width:100%;
-	padding-top: 20px;
+  padding-top: 20px;
   margin-left: 0px;
   margin-right: 0px;
 }
 
 nav {
-	margin-right: 0px;
-	margin-bottom: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
 }
   
 .nav {
@@ -84,23 +84,23 @@ a {
 .list-group-item.active,
 .list-group-item.active:hover, 
 .list-group-item.active:focus  {
-	background: lightgray;;
+  background: lightgray;;
 }
 
 .list-group-item.active a,
 .list-group-item.active:hover a, 
 .list-group-item.active:focus a  {
   color:black
-	}
+}
 
 @media (min-width: 400px) {
-    .affix {
-        position: static;
-    }
+  .affix {
+    position: static;
+  }
 }  
 
 ::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 }  
 
 .workflower-play {
