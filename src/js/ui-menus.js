@@ -126,7 +126,6 @@ workflower.on('loaded', function() {
 swig  = require('swig');
 template = swig.compileFile('template/template.html');
 
-
-
-
-
+$('.workflower-play').click(function() {
+  workflower.play();
+});
