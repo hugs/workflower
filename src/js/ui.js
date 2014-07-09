@@ -6,8 +6,7 @@ $(function () {
         
 	$(window).bind('keydown', function(event) {
   		if(event.keyCode === 27) {
-              // Escape key
-  			document.getElementById("viewport").focus();
+        // Escape key
   		}            
       if (event.metaKey && event.keyCode==79) {
           // Command + O
@@ -27,6 +26,3 @@ $(function () {
   });
 
 });
-
-
-
