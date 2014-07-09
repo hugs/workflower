@@ -1,3 +1,4 @@
+var path = require('path');
 var gui = require('nw.gui');
 var win = gui.Window.get();
 
@@ -101,10 +102,11 @@ function initScrolling() {
 
 initScrolling();
 $("#main").hide(); 
-//$("#greeting").hide(); 
 
 Angelo = require('angelo').Angelo;
-workflower = new Angelo();
+var nodeBinaryPath = path.join(process.cwd(), 'bin', 'node');
+workflower = new Angelo({nodeBinary: nodeBinaryPath});
+
 
 workflower.on('loaded', function() {
   var mainContent = template({
