@@ -117,8 +117,10 @@ $("#main").hide();
 
 Angelo = require('angelo').Angelo;
 var nodeBinaryPath = path.join(process.cwd(), 'bin', 'node');
-workflower = new Angelo({nodeBinary: nodeBinaryPath});
-
+workflower = new Angelo({
+  nodeBinary: nodeBinaryPath,
+  verbose:true
+});
 
 workflower.on('loaded', function() {
   var mainContent = template({
