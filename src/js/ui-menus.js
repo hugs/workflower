@@ -15,11 +15,23 @@ file.append(openMenuItem);
 file.append(separatorMenuItem);
 file.append(closeMenuItem);
 
+
+// Create the view menu
+var view = new gui.Menu();
+// Create the view menu options
+var reloadMenuItem = new gui.MenuItem({ label:  "Reload\t\t⌘R" });
+// Add the menu option to the view menu option
+view.append(reloadMenuItem);
+
+
 // Create the menubar
 win.menu = new gui.Menu({ type: 'menubar' });
 
 // Attach file menu
 win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
+
+// Attach view menu
+win.menu.insert(new gui.MenuItem({ label: 'View', submenu: view}), 3);
 
 win.on('close', function() {
   this.hide(); // Pretend to be closed already
@@ -128,4 +140,9 @@ template = swig.compileFile('template/template.html');
 
 $('.workflower-play').click(function() {
   workflower.play();
+});
+
+reloadMenuItem.on("click", function () {
+    console.log("reload!");
+    workflower.restart();
 });

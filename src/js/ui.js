@@ -13,6 +13,13 @@ $(function () {
           console.log ("Command + O");
           chooseFile();
       }
+      if (event.metaKey && event.keyCode==82) {
+          // Command + R
+          console.log ("Command + R");
+          // Reload!
+          workflower.restart();
+          event.preventDefault()
+      }
       if (event.metaKey && event.keyCode==87) {
           // Command + W
           console.log ("Command + W");
