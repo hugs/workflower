@@ -134,7 +134,7 @@ workflower.on('loaded', function() {
     var $spy = $(this).scrollspy('refresh');
   })
   initScrolling();
-  $("#content").scrollTo('#'+workflower.playlists[0][0].id);
+  $("#content").scrollTo('#'+workflower.playlists[0][1][0].id);
 })
 
 swig  = require('swig');
