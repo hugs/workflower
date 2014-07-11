@@ -23,6 +23,7 @@ $(function () {
       if (event.metaKey && event.keyCode==87) {
           // Command + W
           console.log ("Command + W");
+          win.close();
           event.preventDefault()
       }         
 	});
