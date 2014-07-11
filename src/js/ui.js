@@ -1,7 +1,7 @@
 $(function () {
 
   $(window).bind('click', function(event) {
-        console.log('click!');
+        console.log('Click!');
 	});        
         
 	$(window).bind('keydown', function(event) {
