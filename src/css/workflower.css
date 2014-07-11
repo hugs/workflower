@@ -26,8 +26,9 @@ section {
   height:600px;
   overflow:scroll;
   border: 0px solid grey;
-  padding: 10px 0px 200px 0px;
-  margin-right:0px;
+  padding: 0px 0px 100px 0px;
+  margin: 0px 0px 0px 0px;
+  width:100%;
 }
 
 .greeting {
@@ -37,9 +38,9 @@ section {
 
 .container {
   width:100%;
-  padding-top: 20px;
   margin-left: 0px;
   margin-right: 0px;
+  padding: 20px 0px 0px 0px;
 }
 
 nav {
@@ -103,6 +104,12 @@ a {
   display: none; 
 }  
 
+
+[class^="col-"] {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
 .workflower-play {
   font-size: 26px;
   font-weight: bold;
@@ -129,4 +136,8 @@ a {
   margin-right: 5px;
   color: #000;  
   opacity: .7;
+}
+
+pre[class*="language-"] {
+  font-size: .8em;
 }
