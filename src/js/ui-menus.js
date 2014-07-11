@@ -7,11 +7,19 @@ var file = new gui.Menu();
 
 // Create the file menu options
 var openMenuItem = new gui.MenuItem({ label:  "Open...\t\t⌘O" });
+
+var checkWebsitesDemo = new gui.MenuItem({ label: "Check Websites" });
+var examples = new gui.Menu();
+examples.append(checkWebsitesDemo);
+var examplesMenuItem = new gui.MenuItem({ label:  "Examples" });
+examplesMenuItem.submenu = examples;
+
 var separatorMenuItem = new gui.MenuItem({ type: 'separator' });
 var closeMenuItem = new gui.MenuItem({ label: "Close\t\t⌘W" });
 
 // Add the menu options to the file menu option
 file.append(openMenuItem);
+file.append(examplesMenuItem);
 file.append(separatorMenuItem);
 file.append(closeMenuItem);
 
@@ -52,12 +60,27 @@ win.on('close', function() {
 });
 
 openMenuItem.on("click", function () {
-    console.log("open file!");
+    console.log("Open file!");
     chooseFile();
 });
 
+checkWebsitesDemo.on("click", function () {
+  console.log("Check Websites!");
+  //workflower.filePath = filePath;
+  var demoFilePath = path.join(process.cwd(),
+    'node_modules',
+    'angelo',
+    'workflows',
+    'check-websites',
+    'playlist.js'
+  );
+  workflower.filePath = demoFilePath;
+  workflower.restart();  
+});
+
 closeMenuItem.on("click", function () {
-    console.log("close file!");
+    console.log("Close!");
+    win.close();
 });
 
 
