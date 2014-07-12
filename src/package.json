@@ -12,8 +12,8 @@
   "window": {
     "title": "Workflower",
     "icon": "workflower.png",
-    "width": 400,
-    "height": 640,
+    "width": 340,
+    "height": 580,
     "min_width": 300,
     "show": true,
     "toolbar": false
