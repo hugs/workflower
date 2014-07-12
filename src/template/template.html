@@ -17,7 +17,7 @@
           {% for workflow in playlist|last -%}
           <section>
             <h4 id="{{ workflow.id }}">{{ workflow.title }}</h4>
-            <pre class="line-numbers"><code id="code-{{ workflow.id }}" class="language-javascript">{{ workflow.source }}</code></pre>
+            <pre><code id="code-{{ workflow.id }}" class="language-javascript">{{ workflow.source }}</code></pre>
           </section>
 
           {% endfor %}
