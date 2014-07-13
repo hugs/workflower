@@ -106,8 +106,8 @@ a {
 
 
 [class^="col-"] {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
 }
 
 .workflower-play {
@@ -139,5 +139,5 @@ a {
 }
 
 pre[class*="language-"] {
-  font-size: .8em;
+  font-size: .7em;
 }
