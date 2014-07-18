@@ -142,6 +142,7 @@ Angelo = require('angelo').Angelo;
 var nodeBinaryPath = path.join(process.cwd(), 'bin', 'node');
 workflower = new Angelo({
   nodeBinary: nodeBinaryPath,
+  reporter: 'json',
   verbose: true
 });
 
