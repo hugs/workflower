@@ -1,21 +1,21 @@
 var path = require('path');
-var gui = require('nw.gui');
-var win = gui.Window.get();
+var win = nw.Window.get();
 
 // Create the file menu
-var file = new gui.Menu();
+var file = new nw.Menu();
 
 // Create the file menu options
-var openMenuItem = new gui.MenuItem({ label:  "Open...\t\t⌘O" });
+var openMenuItem = new nw.MenuItem({ label:  "Open...\t\t⌘O" });
 
-var checkWebsitesDemo = new gui.MenuItem({ label: "Check Websites" });
-var examples = new gui.Menu();
+var checkWebsitesDemo = new nw.MenuItem({ label: "Check Websites" });
+var examples = new nw.Menu();
 examples.append(checkWebsitesDemo);
-var examplesMenuItem = new gui.MenuItem({ label:  "Examples" });
+
+var examplesMenuItem = new nw.MenuItem({ label:  "Examples" });
 examplesMenuItem.submenu = examples;
 
-var separatorMenuItem = new gui.MenuItem({ type: 'separator' });
-var closeMenuItem = new gui.MenuItem({ label: "Close\t\t⌘W" });
+var separatorMenuItem = new nw.MenuItem({ type: 'separator' });
+var closeMenuItem = new nw.MenuItem({ label: "Close\t\t⌘W" });
 
 // Add the menu options to the file menu option
 file.append(openMenuItem);
@@ -23,23 +23,24 @@ file.append(examplesMenuItem);
 file.append(separatorMenuItem);
 file.append(closeMenuItem);
 
-
 // Create the view menu
-var view = new gui.Menu();
+var view = new nw.Menu();
 // Create the view menu options
-var reloadMenuItem = new gui.MenuItem({ label:  "Reload\t\t⌘R" });
+var reloadMenuItem = new nw.MenuItem({ label:  "Reload\t\t⌘R" });
 // Add the menu option to the view menu option
 view.append(reloadMenuItem);
 
-
 // Create the menubar
-win.menu = new gui.Menu({ type: 'menubar' });
+var mb = new nw.Menu({ type: 'menubar' });
+mb.createMacBuiltin("Workflower");
+nw.Window.get().menu = mb;
 
 // Attach file menu
-win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
+win.menu.insert(new nw.MenuItem({ label: 'File', submenu: file}), 1);
 
 // Attach view menu
-win.menu.insert(new gui.MenuItem({ label: 'View', submenu: view}), 3);
+win.menu.insert(new nw.MenuItem({ label: 'View', submenu: view}), 3);
+
 
 win.on('close', function() {
   this.hide(); // Pretend to be closed already
