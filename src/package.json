@@ -22,7 +22,7 @@
   "chromium-args": "--remote-debugging-port=22222",
   "dependencies": {
     "angelo": "*",
-    "cabbie": "0.0.9",
+    "cabbie": "*",
     "swig": "*"
   }
 }
