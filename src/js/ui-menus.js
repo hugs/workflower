@@ -138,6 +138,8 @@ function initScrolling() {
 initScrolling();
 $("#main").hide();
 
+// TODO: deal with 'Uncaught node.js Error' via try/catch
+//try {
 Angelo = require('angelo').Angelo;
 var nodeBinaryPath = path.join(process.cwd(), 'bin', 'node');
 workflower = new Angelo({
@@ -160,6 +162,9 @@ workflower.on('loaded', function() {
   initScrolling();
   $("#content").scrollTo('#'+workflower.playlists[0][1][0].id);
 })
+//} catch (e) {
+//  console.log(e);
+//}
 
 swig  = require('swig');
 template = swig.compileFile('template/template.html');
