@@ -6,12 +6,12 @@ html, body {
 
 body {
   padding-top: 50px;
-  user-select: none; 
+  user-select: none;
 }
 
 hr {
   border:2px;
-}  
+}
 
 pre {
   border: 0px;
@@ -47,12 +47,15 @@ nav {
   margin-right: 0px;
   margin-bottom: 0px;
 }
-  
+
 .nav {
- padding:0px; 
-}  
-  
-.navbar {min-height:55px !important}
+ padding:0px;
+}
+
+.navbar {
+  min-height:55px !important;
+  border-bottom: 1px solid grey;
+}
 
 .navbar .nav,
 .navbar .nav > li
@@ -75,21 +78,27 @@ nav {
   left: 0;
   text-align: center;
   margin: auto;
-}  
+  user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
 
 
 a {
   color:black
-}  
+}
 
 .list-group-item.active,
-.list-group-item.active:hover, 
+.list-group-item.active:hover,
 .list-group-item.active:focus  {
   background: lightgray;;
 }
 
 .list-group-item.active a,
-.list-group-item.active:hover a, 
+.list-group-item.active:hover a,
 .list-group-item.active:focus a  {
   color:black
 }
@@ -98,11 +107,11 @@ a {
   .affix {
     position: static;
   }
-}  
+}
 
-::-webkit-scrollbar { 
-  display: none; 
-}  
+::-webkit-scrollbar {
+  display: none;
+}
 
 
 [class^="col-"] {
@@ -117,12 +126,13 @@ a {
   color: #000;
   text-shadow: 0 1px 0 #fff;
   opacity: .4;
+  cursor: default;
 }
 
 .workflower-play:hover,
 .workflower-play:focus {
   color: black;
-  cursor: pointer;
+  cursor: default;
   opacity: .7;
 }
 
@@ -134,10 +144,44 @@ a {
 .dropdown-toggle {
   margin-top: 15px;
   margin-right: 5px;
-  color: #000;  
+  color: #000;
   opacity: .7;
+  cursor: default;
+}
+
+#dev-tools {
+  cursor: default;
 }
 
 pre[class*="language-"] {
   font-size: .7em;
+}
+
+.console-message-url {
+  float: right;
+  text-align: right;
+  max-width: 100%;
+  margin-left: 4px;
+  display:none;
+}
+
+.navbar-fixed-bottom {
+  border-top: 1px solid grey;
+  background: lightgray;
+  min-height: 16px !important;
+  padding: 2px 5px 2px 5px;
+  font-size: .8em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: right;
+  color: gray;
+  user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+.status-enabled {
+  color: #333333;
 }
